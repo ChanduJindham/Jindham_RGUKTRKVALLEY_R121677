@@ -236,6 +236,37 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void removeFromElement(Student student) {
 		// Add your implementation here
+		if(student==null)
+			throw new IllegalArgumentException();
+		else{
+				int length=this.students.length;
+				int count2=0,k;
+				for(k=0;k<length;k++){
+					if(this.students[k]==student){
+						break;
+					}
+				}
+				this.students2=new Student[length-(length-k-1)];
+				int temp=k
+				for(k=0;k<length;k++){
+					if(k==temp){
+						this.students2[count2++]=this.students[k];
+						k++;
+						break;
+					}
+					else{
+						if(this.students[k]!=null)
+							this.students2[count2++]=this.students[k];
+					}
+				
+				}
+
+				this.students=new Student[length-(length-temp-1)];
+				//int count=0;
+				for(int i=0;i<this.students2.length;i++){
+					this.students[i]=this.students2[i];
+				}
+			}
 	}
 
 	@Override
