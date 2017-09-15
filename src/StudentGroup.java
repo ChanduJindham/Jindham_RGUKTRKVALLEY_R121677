@@ -346,22 +346,17 @@ public class StudentGroup implements StudentArrayOperation {
 						break;
 					}
 				}
-				this.students2=new Student[length-(length-k-1)];
+				this.students2=new Student[length-k];
 				int temp=k;
 				for(k=0;k<length;k++){
-					if(k==temp){
-						this.students2[count2++]=this.students[k];
-						k++;
-						break;
-					}
-					else{
+					if(k>temp){
 						if(this.students[k]!=null)
 							this.students2[count2++]=this.students[k];
 					}
 				
 				}
 
-				this.students=new Student[length-(length-temp-1)];
+				this.students=new Student[length-temp];
 				//int count=0;
 				for(int i=0;i<this.students2.length;i++){
 					this.students[i]=this.students2[i];
