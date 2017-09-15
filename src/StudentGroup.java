@@ -247,7 +247,7 @@ public class StudentGroup implements StudentArrayOperation {
 					}
 				}
 				this.students2=new Student[length-(length-k-1)];
-				int temp=k
+				int temp=k;
 				for(k=0;k<length;k++){
 					if(k==temp){
 						this.students2[count2++]=this.students[k];
