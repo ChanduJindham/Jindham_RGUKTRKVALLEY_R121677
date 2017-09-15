@@ -197,7 +197,36 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void remove(Student student) {
 		// Add your implementation here
+		if(student==null)
+			throw new IllegalArgumentException();
+		else{
+			int i;
+			for(i=0;i<this.students.length;i++){
+				if(this.students[i]==student)
+					break;
 			}
+			if(i==this.students.length){
+				throw new IllegalArgumentException("Student not exist");
+			}
+			else{
+				this.students2=new Student[this.students.length-1];
+				int count=0,j;
+				for(j=0;j<this.students.length;j++){
+					if(this.students[j]==student)
+						break;
+					if(this.students[j]!=null)
+						this.students2[count++]=this.students[j];
+				}
+				for(i=j+1;j<this.students.length;j++){
+					this.students2[count++]=this.students[i];
+				}
+				this.students=new Student[this.students.length-1];
+				for(i=0;i<this.students2.length;i++){
+					this.students[i]=this.students2[i];
+				}
+			}
+		}
+	}
 
 	@Override
 	public void removeFromIndex(int index) {
