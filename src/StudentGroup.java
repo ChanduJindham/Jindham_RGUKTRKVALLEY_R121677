@@ -14,7 +14,7 @@ import java.util.Date;
 public class StudentGroup implements StudentArrayOperation {
 
 	private Student[] students;
-	
+	private Student[] students2;
 	/**
 	 * DO NOT remove or change this constructor, it will be used during task check
 	 * @param length
