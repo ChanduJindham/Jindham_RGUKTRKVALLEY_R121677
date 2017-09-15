@@ -167,18 +167,19 @@ public class StudentGroup implements StudentArrayOperation {
 			throw new IllegalArgumentException();
 		else{
 				int length=this.students.length;
-				int temp=1;
-				int nullCount=0;
-				for(int i=0;i<this.students.length;i++){
-					if(this.students[i]==null)
-						nullCount++;
-				}
-				if(length-nullCount-1>=0)
-					this.students2=new Student[length-nullCount-1];
+// 				int temp=1;
+// 				int nullCount=0;
+// 				for(int i=0;i<this.students.length;i++){
+// 					if(this.students[i]==null)
+// 						nullCount++;
+// 				}
+				if(length>0)
+					this.students2=new Student[length-1];
 				int count2=0,k;
 				for(k=0;k<length;k++){
 					if(k==index){
 						//this.students2[count2++]=student;
+						k++;
 						break;
 					}
 					else{
@@ -187,11 +188,11 @@ public class StudentGroup implements StudentArrayOperation {
 					}
 				
 				}
-				for(int p=k;p<length-nullCount-1;p++){
+				for(int p=k;p<length;p++){
 					this.students2[count2++]=this.students[p];
 				}
 
-				this.students=new Student[length-nullCount+1];
+				this.students=new Student[length-1];
 				//int count=0;
 				for(int i=0;i<this.students2.length;i++){
 					this.students[i]=this.students2[i];
@@ -206,18 +207,19 @@ public class StudentGroup implements StudentArrayOperation {
 			throw new IllegalArgumentException();
 		else{
 				int length=this.students.length;
-				int temp=1;
-				int nullCount=0;
-				for(int i=0;i<this.students.length;i++){
-					if(this.students[i]==null)
-						nullCount++;
-				}
-				if(length-nullCount-1>=0)
-					this.students2=new Student[length-nullCount-1];
+// 				int temp=1;
+// 				int nullCount=0;
+// 				for(int i=0;i<this.students.length;i++){
+// 					if(this.students[i]==null)
+// 						nullCount++;
+// 				}
+				if(length-1>=0)
+					this.students2=new Student[length-1];
 				int count2=0,k;
 				for(k=0;k<length;k++){
 					if(this.students[k]==student){
 						//this.students2[count2++]=student;
+						k++;
 						break;
 					}
 					else{
@@ -226,11 +228,11 @@ public class StudentGroup implements StudentArrayOperation {
 					}
 				
 				}
-				for(int p=k;p<length-nullCount-1;p++){
+				for(int p=k;p<length;p++){
 					this.students2[count2++]=this.students[p];
 				}
 
-				this.students=new Student[length-nullCount+1];
+				this.students=new Student[length-1];
 				//int count=0;
 				for(int i=0;i<this.students2.length;i++){
 					this.students[i]=this.students2[i];
