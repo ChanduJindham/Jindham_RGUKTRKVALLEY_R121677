@@ -159,6 +159,7 @@ public class StudentGroup implements StudentArrayOperation {
 				}
 		}
 	}
+
 	@Override
 	public void remove(int index) {
 		// Add your implementation here
