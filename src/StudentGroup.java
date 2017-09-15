@@ -241,6 +241,36 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void removeToIndex(int index) {
 		// Add your implementation here
+		if(index<0 || index>=this.students.length)
+			throw new IllegalArgumentException();
+		else{
+				int length=this.students.length;
+				if(length-(length-index-1)>=0)
+					this.students2=new Student[length-(length-index-1)];
+				int count2=0,k;
+				for(k=0;k<length;k++){
+					if(k==index){
+						this.students2[count2++]=this.students[k];
+						k++;
+						break;
+					}
+					else{
+						if(this.students[k]!=null)
+							this.students2[count2++]=this.students[k];
+					}
+				
+				}
+				// for(int p=k;p<length;p++){
+				// 	this.students2[count2++]=this.students[p];
+				// }
+
+				this.students=new Student[length-(length-index-1)];
+				//int count=0;
+				for(int i=0;i<this.students2.length;i++){
+					this.students[i]=this.students2[i];
+				}
+			}
+
 	}
 
 	@Override
