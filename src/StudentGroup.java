@@ -346,6 +346,7 @@ public class StudentGroup implements StudentArrayOperation {
 						break;
 					}
 				}
+				if(length-k>=0)
 				this.students2=new Student[length-k];
 				int temp=k;
 				for(k=0;k<length;k++){
